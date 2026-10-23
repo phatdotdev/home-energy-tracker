@@ -1,0 +1,8 @@
+### Create message
+GET http://localhost:8085/api/v1/insight/saving-tips/10
+
+###
+GET http://localhost:8083/api/v1/usage/10
+
+###
+GET http://localhost:8081/api/v1/device/user/10

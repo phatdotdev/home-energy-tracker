@@ -1,0 +1,9 @@
+### Create message
+POST http://localhost:8082/api/v1/ingestion
+Content-Type: application/json
+
+{
+  "deviceId": 1,
+  "energyConsumed": 15.75,
+  "timestamp": "2026-10-21T13:59:00Z"
+}

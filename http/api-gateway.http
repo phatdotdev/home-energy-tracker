@@ -1,0 +1,32 @@
+@keycloakUrl = http://localhost:8091
+@realm = het-security-realm
+@clientId = home-energy-tracker-client
+@clientSecret = tUOX8aVExqB3yCd2Q3LmLaAlS0TnCq9I
+
+### Login bằng Client Credentials
+# @name getToken
+POST {{keycloakUrl}}/realms/{{realm}}/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id={{clientId}}&client_secret={{clientSecret}}
+
+### Get User By Id
+GET http://localhost:9000/api/v1/user/3
+Authorization: Bearer {{getToken.response.body.access_token}}
+
+client_id=home-energy-tracker-client
+&client_secret=tUOX8aVExqB3yCd2Q3LmLaAlS0TnCq9I
+
+### Get Device By Id
+GET http://localhost:9000/api/v1/device/1
+
+### 
+GET http://localhost:9000/actuator/circuitbreakers
+
+###
+grant_type=urn:ietf:params:oauth:grant-type:uma-ticket
+&claim_token=ewogICAib3JnYW5pemF0aW9uIjogWyJhY21lIl0KfQ==
+&claim_token_format=urn:ietf:params:oauth:token-type:jwt
+&client_id=gateway-client
+&client_secret=chuoi_client_secret_cua_ban
+&audience=gateway-client

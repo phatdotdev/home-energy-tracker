@@ -1,0 +1,27 @@
+### Create new user
+POST http://localhost:8081/api/v1/device
+Content-Type: application/json
+
+{
+    "name": "Ring",
+    "type": "DOORBELL",
+    "location": "Living Room",
+    "userId": 3
+}
+
+### Get user by id
+GET http://localhost:8081/api/v1/device/1
+
+### Update user
+PUT http://localhost:8081/api/v1/device/4
+Content-Type: application/json
+
+{
+    "name": "Airpods",
+    "type": "SPEAKER",
+    "location": "Bed Room",
+    "userId": 3
+}
+
+### Delete user
+DELETE  http://localhost:8081/api/v1/device/2
